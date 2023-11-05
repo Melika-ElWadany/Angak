@@ -28,6 +28,7 @@
             border: 1px solid #e1e1e1;
             margin-bottom: 10px;
         }
+        
     </style>
 </head>
 
@@ -43,27 +44,31 @@
                     <a class="nav-link" href="profile.html">Profile</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="medicine.html">Medicine</a>
+                    <a class="nav-link" href="#">Medicine</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="MyGroup.html">My Groups</a>
+                    <a class="nav-link" href="#">My Groups</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Notifications</a>
                 </li>
             </ul>
         </div>
-      </nav>
+    </nav>
     <div id="infoForm">
         <!-- Your form content goes here -->
     </div>
-    <div class="friend-list">
-        <div class="friend">Friend 1</div>
-        <div class="friend">Friend 2</div>
-        <!-- Add more friends here -->
+    <div class="row friend-list">
+        <div class="col-sm-6 offset-sm-6 text-right">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#friendsModal">Friends</button>
+        </div>
     </div>
 
     <!-- Chat Popup -->
+    <div class="chat-popup">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#chatModal">Open Chat</button>
+    </div>
+
     <div class="modal" id="chatModal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -74,7 +79,6 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Chat content goes here -->
                     <div id="chatMessages"></div>
                     <form onsubmit="sendMessage(); return false;">
                         <input type="text" id="chatInput" placeholder="Type a message..." class="form-control">
@@ -88,15 +92,42 @@
         </div>
     </div>
 
-    <div class="chat-popup">
-        <button class="btn btn-primary" data-toggle="modal" data-target="#chatModal">Open Chat</button>
+    <div class="modal" id="friendsModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Friends List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="friend-list">
+                        <div class="friend">Friend 1</div>
+                        <div class="friend">Friend 2</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+
     <script>
+        function openChat() {
+            document.getElementById('chatModal').style.display = 'block';
+        }
+
+        function closeChat() {
+            document.getElementById('chatModal').style.display = 'none';
+        }
+
         function sendMessage() {
             var message = document.getElementById('chatInput').value;
             var messageElement = document.createElement('div');
-            messageElement.textContent = message;
+            messageElement.textContent = 'You: ' + message;
             document.getElementById('chatMessages').appendChild(messageElement);
             document.getElementById('chatInput').value = '';
         }
