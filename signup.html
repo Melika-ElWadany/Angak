@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<style>
+  #signupForm {
+    /* padding-top: 5%; */
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-bottom: 10%;
+  }
+  .lableName {
+    font-size: 150%;
+    color: #4E4F50;
+  }
+  #signupStarter {
+    padding-top: 6%;
+    text-align: center;
+    color: black;
+  }
+  .btn {
+    float: right;
+  }
+</style>
+
+<body>
+  <div id="signupStarter">
+    <h2>Welcome!</h2>
+    <h3>Lets set up an acount!!</h3>
+  </div>
+
+  <div id="signupForm">
+    <form action="profile.html">
+      <div class="form-group">
+        <label class="lableName" for="formGroupExampleInput">Name</label>
+        <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" placeholder="Fist, Last">
+      </div>
+      <div class="form-group">
+          <label class="lableName" for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+          <label class="lableName" for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+          <small id="emailHelp" class="form-text text-muted">Choose a password that is atleast 13 characters long.</small>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg">Create</button>
+    </form>
+  </div>
+  
+
+
+</body>
+</html>
